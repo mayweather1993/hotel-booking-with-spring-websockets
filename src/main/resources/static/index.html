@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trans Offers</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" crossorigin="anonymous">
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
+            crossorigin="anonymous"></script>
+    <script
+            src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"
+            crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+<noscript>
+    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+        enabled. Please enable
+        Javascript and reload this page!</h2>
+</noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="sub">Write Uris, separate by comma</label>
+                    <input type="text" id="sub" class="form-control"
+                           placeholder="E.x. http://localhost:8080/booking/hotles,http://localhost:8080/booking/hotles/1">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<table id="conversation" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <th>Uri</th>
+        <th>Method</th>
+        <th>Status</th>
+        <th>Taken time</th>
+        <th>Response length</th>
+        <th>Response body</th>
+    </tr>
+    </thead>
+    <tbody id="uris">
+    </tbody>
+</table>
+</body>
+</html>
